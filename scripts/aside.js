@@ -1,6 +1,6 @@
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {getPageYOffset()};
 
-const asidePrivacy = document.getElementById("aside1");
+const asidePrivacy = document.getElementById("asidePrivacy");
 const linkwebsite = document.getElementById("linkwebsite");
 const website = document.getElementById("website");
 const linksoftware = document.getElementById("linksoftware");
@@ -9,7 +9,7 @@ const linksoftware = document.getElementById("linksoftware");
 const sticky = asidePrivacy.offsetTop;
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
+function getPageYOffset() {
 	if (window.pageYOffset >= 240) {
 		asidePrivacy.classList.add("sticky")
 	} else {
