@@ -1,4 +1,4 @@
-const modal = document.getElementsByClassName("modal-start");
+const modal = document.querySelectorAll(".modal-start");
 const modalCheck = document.getElementsByClassName("modal-check");
 
 function openModal() {
