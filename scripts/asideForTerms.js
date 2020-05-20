@@ -10,7 +10,7 @@ let l = 0;
 function getPageYOffsetForTerms() {
 	if (window.pageYOffset >= 225) {
 		asideTerms.classList.add("sticky");
-		if (  window.pageYOffset >= nextOffset ) {
+		if (  window.pageYOffset > nextOffset ) {
 			for ( let k = 0; k < links.length; k++ ) {
 				document.querySelector('#link' + links[k]).classList.remove("active");
 			}
@@ -53,7 +53,7 @@ function setClassForLink() {
 }
 
 function linkTo( link ) {
-	const linkOffsetTop = document.getElementById(link).offsetTop  + 220;
+	const linkOffsetTop = document.getElementById(link).offsetTop  + 215;
 	window.scrollTo(0 , linkOffsetTop);
 
 	setTimeout(() => {
