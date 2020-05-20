@@ -4,12 +4,21 @@ const links = ['basic','trial', 'payment', 'termination', 'service', 'confidenti
 const asideTerms = document.querySelector("#asideTerms");
 let nextOffset = document.getElementById(links[1]).offsetTop;
 let currentOffset = 225;
+const endContent = document.querySelector("#end-content").offsetTop + 192;
 
 let l = 0;
 
 function getPageYOffsetForTerms() {
-	if (window.pageYOffset >= 225) {
+	if (window.pageYOffset >= endContent) {
+		asideTerms.classList.remove("sticky");
+		asideTerms.classList.add("fixToBottom");
+	} else if ( window.pageYOffset >= 225 ) {
 		asideTerms.classList.add("sticky");
+		asideTerms.classList.remove("fixToBottom");
+	}
+
+
+	if (window.pageYOffset >= 225) {
 		if (  window.pageYOffset > nextOffset ) {
 			for ( let k = 0; k < links.length; k++ ) {
 				document.querySelector('#link' + links[k]).classList.remove("active");
@@ -18,12 +27,15 @@ function getPageYOffsetForTerms() {
 			if ( (l + 1) !== links.length ) {
 				l++;
 			}
+			console.log('++');
 			currentOffset = document.getElementById(links[l]).offsetTop;
 			setClassForLink();
 		} else if (  window.pageYOffset < currentOffset && window.pageYOffset > 225) {
 			for ( let k = 0; k < links.length; k++ ) {
 				document.querySelector('#link' + links[k]).classList.remove("active");
 			}
+
+			console.log('--');
 
 			if ( l !== 0 ) {
 				l--;
