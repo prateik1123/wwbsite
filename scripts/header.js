@@ -11,6 +11,7 @@ window.onscroll = function () {
 document.addEventListener('DOMContentLoaded', () => {
 
 	const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+	const html = document.querySelector('html');
 
 	if ($navbarBurgers.length > 0) {
 
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				el.classList.toggle('is-active');
 				$target.classList.toggle('is-active');
+				html.classList.toggle('scroll-hidden');
 
 			});
 		});
