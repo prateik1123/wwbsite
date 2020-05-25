@@ -26,20 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	}
-
-	const dropdownResources = document.querySelector('.dropdown-mobile-resources');
-	const dropdownCompany = document.querySelector('.dropdown-mobile-company');
-
-	dropdownResources.addEventListener('click', function(event) {
-		event.stopPropagation();
-		dropdownResources.classList.toggle('is-active');
-	});
-
-	dropdownCompany.addEventListener('click', function(event) {
-		event.stopPropagation();
-		dropdownCompany.classList.toggle('is-active');
-	});
-
 });
 
 
